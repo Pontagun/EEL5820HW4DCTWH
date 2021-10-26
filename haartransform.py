@@ -1,8 +1,8 @@
 import math
 
 def ini_haar(tm):
-    N = tm.shape[0]  # For example, N = 8
-    n = int(math.log2(N))  # n = 3
+    N = tm.shape[0]
+    n = int(math.log2(N))
     x = [item / N for item in range(0, N)]
     r_max = n
     rm_pair = []
@@ -37,4 +37,4 @@ def ini_haar(tm):
 
         tm[inx+1] = met_row_tmp
 
-    return tm
+    return tm/math.sqrt(tm.shape[0])

@@ -1,11 +1,12 @@
 import math
 
+
 def get_binary(decical, bits):
     return (bin(decical).replace("0b", "")).zfill(bits)
 
+
 def ini_wht(tm):
     n = int(math.log2(tm.shape[0]))
-    print("There are " + str(n) + " bits")
 
     for ridx in range(tm.shape[1]):  # row
         row_bin = get_binary(ridx, n)
@@ -18,4 +19,4 @@ def ini_wht(tm):
 
             tm[cidx, ridx] = B
 
-    return tm;
+    return tm/math.sqrt(tm.shape[0])
