@@ -15,30 +15,6 @@ def create_metric(size):
     return np.zeros((size, size))
 
 
-def pixel_normalization(unorm_image):
-    pxmin = unorm_image.min()
-    pxmax = unorm_image.max()
-
-    for i in range(unorm_image.shape[0]):
-        for j in range(unorm_image.shape[1]):
-            unorm_image[i, j] = math.floor(((unorm_image[i, j] - pxmin) / (pxmax - pxmin)) * 255)
-
-    norm_image = unorm_image
-    return norm_image
-
-def pixel_onenormalization(unorm_image):
-    print(type(unorm_image))
-    pxmin = unorm_image.min()
-    pxmax = unorm_image.max()
-
-    for i in range(unorm_image.shape[0]):
-        for j in range(unorm_image.shape[1]):
-            unorm_image[i, j] = float(round((unorm_image[i, j] - pxmin) / (pxmax - pxmin), 4))
-
-    norm_image = unorm_image
-    return norm_image
-
-
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
 
